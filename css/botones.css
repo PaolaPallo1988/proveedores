@@ -1,0 +1,166 @@
+
+.boton{
+    font-size:18px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    color:white;
+    background:#638cb5;
+    border:1px;
+    width:200px;
+    height:40px;
+   }
+
+   .boton1{
+    font-size:18px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    color:white;
+    background:#638cb5;
+    border:1px;
+    width:300px;
+    height:40px;
+   }
+
+
+   .interlineado {
+    line-height: 140%;
+}
+
+
+/*INTERLINIADO  */
+.icon-image {
+    float: left;
+    background: url(img/icon.jpg) no-repeat;
+    /* Aquí agrega una imagen de 20x20*/
+    width: 20px;
+    /* El ancho y alto son las misma proporciones que la imagen*/
+    height: 20px;
+    margin-left: 10px;
+}
+
+
+  /*INTERLINIADO */
+  .interlineado {
+    line-height: 150%;
+  }
+  .icon-image {
+    float: left;
+    background: url(img/icon.jpg) no-repeat;
+    /* Aquí agrega una imagen de 20x20*/
+    width: 20px;
+    /* El ancho y alto son las misma proporciones que la imagen*/
+    height: 20px;
+    margin-left: 10px;
+  }
+
+/*ARREGLAR LOS INPUT TIPO FILE  */
+.fancy-file{
+    display: none;
+}
+
+.fancy-file + label{
+    display: flex;
+    flex: 1;
+}
+
+.fancy-file__fancy-file-name,
+.fancy-file__fancy-file-button{
+    padding: 5px 10px;
+}
+
+.fancy-file__fancy-file-name {
+    background: rgb(231, 236, 152);
+    border: 1px solid #CACACA;
+    /*border-radius: 4px 0 0 4px;
+    width: 900px;*/
+    color: black;
+}
+
+.fancy-file__fancy-file-button{
+    background: #0D1596 url(./folder.png) 4px center / 25px
+    no-repeat;
+    border: 1px solid #5BC0DE;
+    color: white;
+    white-space: nowrap;
+    border-radius: 0 14px 14px 0;
+    padding-left: 43px;
+    cursor: pointer;
+}
+
+
+  /* PARA QUITAR LAS FLECHITAS DE LOS SELECT*/
+
+select {
+  -moz-appearance: none;
+   text-indent: 0.01px;
+   text-overflow: '';
+   color:black;
+   background: white;
+  -webkit-appearance:none;
+  -ms-appearance:none;
+  -o-appearance:none;
+   appearance:none;
+  }
+  /* PARA QUITAR LAS FLECHITAS DE LOS SELECT*/
+
+
+
+
+
+i.derecha{
+display: block;
+float: right
+}
+
+dd {
+    margin-left: 50px;
+  }
+
+.dd1{
+    margin-left: 100px;
+  }
+
+
+  .form-label-left .radio label {
+    display: inline-block;
+    cursor: pointer;
+    color: #02020c;
+    position: relative;
+    padding: 5px 10px 5px 51px;
+    font-size: 1em;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+
+    .form-label-left .radio label:hover {
+      background: rgba(255, 65, 54, 0.1); }
+    .form-label-left .radio label:before {
+      content: "";
+      display: inline-block;
+      width: 17px;
+      height: 17px;
+      position: absolute;
+      left: 15px;
+      border-radius: 50%;
+      background: none;
+      border: 3px solid #0f0e0e; }
+  .form-label-left input[type="radio"] {
+    display: none; }
+    .form-label-left input[type="radio"]:checked + label:before {
+      display: none; }
+    .form-label-left input[type="radio"]:checked + label {
+      padding: 5px 15px;
+      background: #0D1596;
+      border-radius: 2px;
+      color: #fff; }
+  .form-label-left .checkbox label:before {
+    border-radius: 3px; }
+  .form-label-left .checkbox input[type="checkbox"] {
+    display: none; }
+    .form-label-left .checkbox input[type="checkbox"]:checked + label:before {
+      display: none; }
+    .form-label-left .checkbox input[type="checkbox"]:checked + label {
+      background: #0e0b0b;
+      color: #fff;
+      padding: 5px 15px; }
