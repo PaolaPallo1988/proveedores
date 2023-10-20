@@ -3,6 +3,7 @@ require('../conexion/conexion.php');
 require('../login/session.php');
 $result = mysqli_query($conn_registro, "SELECT * FROM usuario u INNER JOIN perfil p ON u.id_usuario='$session_id' AND p.id_perfil= u.perfil_id") or die('Error In Session');
 $row = mysqli_fetch_array($result);
+
 ?>
 
 

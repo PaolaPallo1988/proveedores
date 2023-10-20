@@ -217,7 +217,6 @@ $nombre_usuario = $row['nombre_usuario'];
                                             <div class='col-sm-6'>
                                                 <label class="formulario__label"> NOMBRE O RAZÓN SOCIAL </label>
                                                 <div class='input-group date'>
-
                                                     <input type='text' style="background-color:#E0F3E7" class="formulario__input" name="nombre_postulante" id="nombre_postulante" style="text-transform:uppercase;" value="<?php echo  $nombre_usuario ?>" onkeyup="javascript:this.value=this.value.toUpperCase();" disabled />
                                                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
                                                 </div>
@@ -237,7 +236,7 @@ $nombre_usuario = $row['nombre_usuario'];
                                                 <label class="formulario__label"> ACTIVIDAD * </label>
                                                 <div class='input-group date'>
                                                     <select class="formulario__input" name="actividad_postulante" id="actividad_postulante" onchange="mostrar(this.value);" required>
-                                                        <option value=" ">SELECCIONAR...</option>
+                                                        <option value="N/A">SELECCIONAR...</option>
                                                         <option value="DISTRIBUIDOR">DISTRIBUIDOR</option>
                                                         <option value="FABRICANTE">FABRICANTE</option>
                                                     </select>
@@ -252,8 +251,9 @@ $nombre_usuario = $row['nombre_usuario'];
                                                     <div class="radio">
                                                         <input type="radio" name="distribuidor_postulante" id="distribuidor_postulante1" value="AUTORIZADO">
                                                         <label for="distribuidor_postulante1"> AUTORIZADO </label>
-                                                        <input type="radio" name="distribuidor_postulante" id="distribuidor_postulante2" value="EXCLUSIVO">
+                                                        <input type="radio" name="distribuidor_postulante" id="distribuidor_postulante2" value="EXCLUSIVO" >
                                                         <label for="distribuidor_postulante2"> EXCLUSIVO </label>
+                                                        <input type="radio"  name="distribuidor_postulante" id="distribuidor_postulante3" value="N/A" checked>
                                                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                                                     </div>
                                                     <p class="formulario__input-error">Seleccione una actividad </p>
@@ -500,7 +500,7 @@ $nombre_usuario = $row['nombre_usuario'];
                                                     <label class="formulario__label"> PAIS * </label>
                                                     <div class='input-group date'>
                                                         <select class="formulario__input" style="text-transform:uppercase;" name="pais_legal" id="pais_legal" required>
-                                                            <option value=" ">SELECCIONAR......</option>
+                                                            <option value="NINGUNO">SELECCIONAR......</option>
                                                             <?php
                                                             include("../conexion/conexion.php");
                                                             $sqlpais = "SELECT * FROM pais ORDER BY nombre_pais";
@@ -569,7 +569,7 @@ $nombre_usuario = $row['nombre_usuario'];
                                         <font size=5 style="color:black"> DISPONE DE APODERADO ? </font>
                                         <input type="radio" name="opcion_apoderado" id="opcion_apoderadoSi" value="SI" onchange="postulante(this.value);">
                                         <label for="opcion_apoderadoSi"> SI </label>
-                                        <input type="radio" name="opcion_apoderado" id="opcion_apoderadoNo" value="NO" onchange="postulante(this.value);">
+                                        <input type="radio" name="opcion_apoderado" id="opcion_apoderadoNo" value="NO" onchange="postulante(this.value);" >
                                         <label for="opcion_apoderadoNo"> NO </label>
                                     </div>
                                 </div>
@@ -588,7 +588,7 @@ $nombre_usuario = $row['nombre_usuario'];
                                                 <div class='col-sm-6' id='grupo__nombre_apoderado'>
                                                     <label class="formulario__label"> NOMBRES Y APELLIDOS * </label>
                                                     <div class='input-group date'>
-                                                        <input type='text' class="formulario__input" name="nombre_apoderado" id="nombre_apoderado" onkeypress="return soloLetras(event)" onkeyup="javascript:this.value=this.value.toUpperCase();" />
+                                                        <input type='text' class="formulario__input" name="nombre_apoderado" id="nombre_apoderado" onkeypress="return soloLetras(event)" onkeyup="javascript:this.value=this.value.toUpperCase();" required/>
                                                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                                                     </div>
                                                     <p class="formulario__input-error"> Digite dos nombres y dos apellidos</p>
@@ -596,7 +596,7 @@ $nombre_usuario = $row['nombre_usuario'];
                                                 <div class="col-sm-6" id='grupo__vigencia_apoderado'>
                                                     <label class="formulario__label"> VIGENCIA * </label>
                                                     <div class='input-group date'>
-                                                        <input type="text" class="formulario__input" id="vigencia_apoderado" name="vigencia_apoderado" placeholder='DD/MM/AAAA' onchange="vigenciaApoderado()" onkeyup="fecha(event, this)" maxlength="10">
+                                                        <input type="text" class="formulario__input" id="vigencia_apoderado" name="vigencia_apoderado" placeholder='DD/MM/AAAA' onchange="vigenciaApoderado()" onkeyup="fecha(event, this)" maxlength="10" required>
                                                         <!--<input type="date" class="formulario__input" id="vigencia_apoderado" name="vigencia_apoderado" min="01-01-2018" max="31-12-2025" required>-->
                                                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                                                     </div>
@@ -607,7 +607,7 @@ $nombre_usuario = $row['nombre_usuario'];
                                                 <div class='col-sm-6' id='grupo__direccion_apoderado'>
                                                     <label class="formulario__label"> DIRECCIÓN * </label>
                                                     <div class='input-group date'>
-                                                        <input type='text' class="formulario__input" name="direccion_apoderado" id="direccion_apoderado" style="text-transform:uppercase;" onkeypress="return validaciudad(event);" onkeyup="javascript:this.value=this.value.toUpperCase();" />
+                                                        <input type='text' class="formulario__input" name="direccion_apoderado" id="direccion_apoderado" style="text-transform:uppercase;" onkeypress="return validaciudad(event);" onkeyup="javascript:this.value=this.value.toUpperCase();" required />
                                                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                                                         <!--<span class="input-group-addon">
                                                             <span class="fas fa-street-view	"></span>
@@ -618,7 +618,7 @@ $nombre_usuario = $row['nombre_usuario'];
                                                 <div class='col-sm-6' id='grupo__ciudad_apoderado'>
                                                     <label class="formulario__label"> CIUDAD * </label>
                                                     <div class='input-group date'>
-                                                        <input type='text' class="formulario__input" name="ciudad_apoderado" id="ciudad_apoderado" onkeypress="return soloLetras(event)" onkeyup="javascript:this.value=this.value.toUpperCase();" />
+                                                        <input type='text' class="formulario__input" name="ciudad_apoderado" id="ciudad_apoderado" onkeypress="return soloLetras(event)" onkeyup="javascript:this.value=this.value.toUpperCase();" required/>
                                                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                                                         <!--<span class="input-group-addon">
                                                             <span class="fas fa-building"></span>
@@ -631,7 +631,7 @@ $nombre_usuario = $row['nombre_usuario'];
                                                 <div class='col-sm-3' id='grupo__telefono_apoderado'>
                                                     <label class="formulario__label"> TELÉFONO FIJO O MOVIL * </label>
                                                     <div class='input-group date'>
-                                                        <input type='text' class="formulario__input" name="telefono_apoderado" id="telefono_apoderado" onkeypress="return numeros(event)" maxlength="13" />
+                                                        <input type='text' class="formulario__input" name="telefono_apoderado" id="telefono_apoderado" onkeypress="return numeros(event)" maxlength="13" required />
                                                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                                                         <!--<span class="input-group-addon">
                                                                     <span class="fas fa-phone"></span>
@@ -642,7 +642,7 @@ $nombre_usuario = $row['nombre_usuario'];
                                                 <div class='col-sm-6' id='grupo__correo_apoderado'>
                                                     <label class="formulario__label"> CORREO * </label>
                                                     <div class='input-group date'>
-                                                        <input type='email' class="formulario__input" style="text-transform:lowercase" name="correo_apoderado" id="correo_apoderado" />
+                                                        <input type='email' class="formulario__input" style="text-transform:lowercase" name="correo_apoderado" id="correo_apoderado" required/>
                                                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                                                         <!--<span class="input-group-addon">
                                                                     <span class="fas fa-envelope-open"></span>

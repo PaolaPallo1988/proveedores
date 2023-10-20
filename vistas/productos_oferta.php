@@ -167,10 +167,11 @@ $row = mysqli_fetch_array($result);
                             <font size="4" face="arial">
                                 <form class="form-label-left input_mask" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
                                     <?php include("../controlador/guarda_productos_oferta.php"); ?>
-                                    <input type='hidden' class="form-control" required name="usuario_id" id="usuario_id" value="<?php echo  $row['id_usuario']; ?>" />
-                                    <input type='hidden' class="form-control" required name="cedula_postulante" id="cedula_postulante" value="<?php echo  $row['cedula_usuario']; ?>" />
-                                    <input type='hidden' class="form-control" required name="nombre_postulante" id="nombre_postulante" value="<?php echo  $row['nombre_postulante']; ?>" />
-                                    <input type='hidden' class="form-control" required name="estado_id" id="estado_id" value="1" readonly />
+                                    <input type='hidden' class="form-control" required name="usuario_id" id="usuario_id" value="<?php echo  $row['id_usuario']; ?>" >
+                                    <input type='hidden' class="form-control" required name="cedula_postulante" id="cedula_postulante" value="<?php echo  $row['cedula_usuario']; ?>" >    
+                                    <!-- <input type='hidden' class="form-control" required name="nombre_postulante" id="nombre_postulante" value="<?php echo  $row['nombre_postulante']; ?>" > -->
+                                    <input type='hidden' class="form-control" required name="estado_id" id="estado_id" value="1" readonly >
+                                    
                                     <div class="container p-2 my-2 text-white" style="background-color:#0A307C">
                                         <font size=6> PRODUCTOS O SERVICIOS QUE OFERTA</font>
                                     </div>

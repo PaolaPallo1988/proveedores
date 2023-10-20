@@ -1,12 +1,12 @@
 <?php
 include "../conexion/conexion.php"; //CONEXION A LA BASE DE DATOS//
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+ use PHPMailer\PHPMailer\Exception;
 
 if (isset($_POST['guarda_oferta'])) {
     $usuario_id = mysqli_real_escape_string($conn_registro, (strip_tags($_POST["usuario_id"], ENT_QUOTES)));
     $cedula_postulante = mysqli_real_escape_string($conn_registro, (strip_tags($_POST["cedula_postulante"], ENT_QUOTES)));
-    $nombre_postulante = mysqli_real_escape_string($conn_registro, (strip_tags($_POST["nombre_postulante"], ENT_QUOTES)));
+    $nombre_postulante = mysqli_real_escape_string($conn_registro, (strip_tags($row["nombre_usuario"], ENT_QUOTES)));
 
     $producto_oferta = "2";
 
@@ -107,11 +107,11 @@ if (isset($_POST['guarda_oferta'])) {
                 // SACA LA FECHA 
                 // Envíe un correo electrónico al usuario con el token en un enlace en el que pueda hacer clic
                 // These must be at the top of your script, not inside a function
-                require 'vendor/phpmailer/phpmailer/src/Exception.php';
-                require 'vendor/phpmailer/phpmailer/src/SMTP.php';
-                require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
+                require '../vendor/phpmailer/phpmailer/src/Exception.php';
+                require '../vendor/phpmailer/phpmailer/src/SMTP.php';
+                require '../vendor/phpmailer/phpmailer/src/PHPMailer.php';
                 //Load Composer's autoloader
-                require 'vendor/autoload.php';
+                require '../vendor/autoload.php';
                 $body =       "<html >
                 <head>
                     <title></title>

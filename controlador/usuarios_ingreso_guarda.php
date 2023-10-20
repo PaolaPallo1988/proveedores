@@ -14,7 +14,7 @@ if (isset($_POST['guardausuario'])) {
     $usuario_creacion_resp = mysqli_real_escape_string($conn_registro, (strip_tags($_POST["usuario_creacion_resp"], ENT_QUOTES)));
     $password_usuario = (strip_tags($_POST["password_usuario"], ENT_QUOTES));
     $hashPassword = password_hash($password_usuario, PASSWORD_DEFAULT);
-
+    
     $archivo = "true";
     $usuario = $nombre_usuario;
     $directorio = ("../Fotos_Perfil/$usuario/");
@@ -25,7 +25,8 @@ if (isset($_POST['guardausuario'])) {
     $sqlusuario = "INSERT INTO usuario  (nombre_usuario, apellido_usuario, cedula_usuario, perfil_id, estado_id, correo_usuario, usuario_creacion_resp, password_usuario,imagen) VALUES 
                                 ('" . $nombre_usuario . "','" . $apellido_usuario . "','" . $cedula_usuario . "','" . $perfil_id . "','" . $estado_id . "','" . $correo_usuario . "','" . $usuario_creacion_resp . "','" . $hashPassword . "','" . $nombre_imagen . "')";
 
-    if (!empty($_FILES['imagen']['tmp_name'])) {
+    
+if (!empty($_FILES['imagen']['tmp_name'])) {
         if ($size > 900000) {
             echo "<script>
         Swal.fire({
@@ -56,6 +57,7 @@ if (isset($_POST['guardausuario'])) {
                             window.location = '../vistas/usuarios_ingreso.php';
                         });
                         </script>";
+
                         $sqlimagen = "INSERT INTO usuario  (imagen) VALUES ('" . $nombre_imagen . "')";
                     } else {
                         echo "Error: " . $sqlusuario . "<br>" . mysqli_error($conn_registro);

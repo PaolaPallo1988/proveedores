@@ -6,6 +6,8 @@ include('conexion/conexion.php');
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+date_default_timezone_set("America/Bogota");
+
 
 $intentos = 0;  //INICIALIZANDO A VARIABLE INTENTOS
 
@@ -33,6 +35,8 @@ if (isset($_POST['login'])) {
             $_SESSION['correo_usuario']         = $row['correo_usuario'];
             $_SESSION['perfil_id']              = $row['perfil_id'];
             $_SESSION['estado_id']              = $row['estado_id'];
+
+
             /// Se manejan las sesiones
             if ($_SESSION['perfil_id'] == 1 && $_SESSION['estado_id'] == 1) {
                 header('location: vistas/principal.php');
@@ -42,9 +46,15 @@ if (isset($_POST['login'])) {
                 header('location: vistas/analista.php');
             } else if ($_SESSION['perfil_id'] == 4 && $_SESSION['estado_id'] == 1) {
 
+                $fecha_actualizacion= date('Y-m-d H:i:s');
+
                 $cedula = mysqli_real_escape_string($conn_registro, (strip_tags($_POST['cedula_usuario'], ENT_QUOTES)));
                 $query = "SELECT * FROM usuario WHERE cedula_usuario= '$cedula'";
                 $results = mysqli_query($conn_registro, $query);
+
+                $actualiza = " UPDATE usuario SET fechaActualizacion_usuario = NOW()  WHERE  cedula_usuario = $cedula";
+                $actualizaFecha= mysqli_query($conn_registro, $actualiza);
+
                 while ($registrousu = mysqli_fetch_array($results)) {
                     $datosusu = $registrousu[0] . "||" . //ID
                         $registrousu[1] . "||" . //NOMBRE USUARIO
@@ -70,7 +80,7 @@ if (isset($_POST['login'])) {
                     // SACA LA FECHA 
 
                     $fecha = date("Y-m-d h:i:s");
-                    echo date("Y-m-d h:i:s");
+                    
                     // SACA LA FECHA 
                     // Envíe un correo electrónico al usuario con el token en un enlace en el que pueda hacer clic
                     // Import PHPMailer classes into the global namespace

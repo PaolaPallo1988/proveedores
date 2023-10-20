@@ -1,13 +1,18 @@
 <?php
 
+
 require('../conexion/conexion.php');
 require('../login/session.php');
+require "../vendor/autoload.php";
+
+
 
 $result = mysqli_query($conn_registro, "SELECT * FROM usuario u INNER JOIN perfil p INNER JOIN postulante pos INNER JOIN razonsoc r INNER JOIN telefonos_ecuador tel ON u.id_usuario='$session_id' AND p.id_perfil= u.perfil_id AND u.id_usuario= pos.usuario_id AND pos.razonsoc_id= r.id_razonsoc  AND u.id_usuario = tel.usuarioId_ecuador ")  or die('Error In Session');
 $row = mysqli_fetch_array($result);
 
-
 ob_start();
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -648,50 +653,53 @@ ob_start();
     </div>
     <!-- /page content -->
 
-</body>
+    <!-- PDF VERTICAL -->
+    <script type="text/php">
+  if (isset($pdf))
+    {
+      $font = Font_Metrics::get_font("Arial", "bold");
+      $pdf->page_text(765, 550, "Pagina {PAGE_NUM} de {PAGE_COUNT}", $font, 9, array(0, 0, 0));
+    }
+</script>
 
-<footer> 
-     REGISTRO DE PROVEEDORES DE BIENES ESTRATÉGICOS © <?php echo date("d-m-Y h:i:s"); ?> 
-</footer>
+    <footer>
+        REGISTRO DE PROVEEDORES DE BIENES ESTRATÉGICOS © <?php echo $PAGE_COUNT; ?>
+    </footer>
+
+   
+</body>
 
 </html>
 
-
-
 <?php
-
-// https://www.youtube.com/watch?v=VSw_CoFj6hY&ab_channel=CarlosCastillo
-
-
-$html = ob_get_clean();
-require('../dompdf/autoload.inc.php');
-
-
-// PREPARA UNA VARIABLE PARA RECIBIR LO QUE DESTA GUARDADO DE HTML
+// reference the Dompdf namespace
 use Dompdf\Dompdf;
+use Dompdf\FontMetrics;
+use Dompdf\Canvas;
+use Dompdf\Options;
+
+//EL FORMATO DE HTML APAREZCA EN EL PDF
+$html = ob_get_clean();
 
 
 
+$options = new Options();
 
-// PERMITE QUE OBTENGA IMAGENES
-//https://www.youtube.com/watch?v=yGBd3ymCnE8&list=PLYAyQauAPx8mv6I7SG-4sNGVngclrO6WQ&index=8&ab_channel=CodeStack
-$options = $dompdf->getOptions();
-$options->set(array('isRemoteEnabled' => true));
-$dompdf->setOptions($options);
-
-//INSTANCIAR LA CLASE
+$options->set('defaultFont', 'Arial');
+// instantiate and use the dompdf class
 $dompdf = new Dompdf($options);
-
 // PSAR EL CONTENIDO DE HTML
 $dompdf->loadHtml($html);
-
-//TAMAÑO FORMATO DE LA HOJA
-$dompdf->setPaper('A4');
-
-//REALIZAR HTML A PDF
+// (Optional) Setup the paper size and orientation
+$dompdf->setPaper('A4', 'portrail');
+// Render the HTML as PDF
 $dompdf->render();
-
 // PASAR POR PRIMER PARAMETRO EL 
-$dompdf->stream('REPORTE CALIFICACION', array('attachment"' => false));
+$dompdf->stream('REPORTE CALIFICACION', array('attachment"' => true));
+
+
+
+
+
 
 ?>

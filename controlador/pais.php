@@ -12,7 +12,7 @@ $cadena1="";
 
 
 while ($ver = mysqli_fetch_row($result)) {
-	$cadena1 = $cadena1 . '<div class="formulario__input" value = ' .$ver[0] . '>' . utf8_encode($ver[2]) . '</div>';
+	$cadena1 = $cadena1 . '<div class="formulario__input" value = ' .$ver[0] . '>' . ($ver[2]) . '</div>';
 	//echo '<prev>';print_r ($ver[2]);echo '</prev>';
 }
 echo  $cadena1 . "</input>";

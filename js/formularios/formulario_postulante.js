@@ -143,13 +143,19 @@ function postulante(id) {
 		// $("#posee_apoderado").hide();
 		$("#titulo_apoderado").show();
 		$("#apoderado").show();
-		//document.getElementById("opcion_apoderadoSi").checked = false;
 		document.getElementById("nombre_apoderado").setAttribute("required", "");
 		document.getElementById("vigencia_apoderado").setAttribute("required", "");
 		document.getElementById("direccion_apoderado").setAttribute("required", "");
 		document.getElementById("ciudad_apoderado").setAttribute("required", "");
 		document.getElementById("telefono_apoderado").setAttribute("required", "");
 		document.getElementById("correo_apoderado").setAttribute("required", "");
+
+		document.getElementById("nombre_apoderado").value = "";
+		document.getElementById("vigencia_apoderado").value = "";
+		document.getElementById("direccion_apoderado").value = "";
+		document.getElementById("ciudad_apoderado").value = "";
+		document.getElementById("telefono_apoderado").value = "";
+		document.getElementById("correo_apoderado").value = "";
 	}
 	if (id == "NO") {
 		// $("#posee_apoderado").show();
@@ -162,12 +168,12 @@ function postulante(id) {
 		document.getElementById("telefono_apoderado").removeAttribute("required", "");
 		document.getElementById("correo_apoderado").removeAttribute("required", "");
 
-		document.getElementById("nombre_apoderado").value = "";
-		document.getElementById("vigencia_apoderado").value = "";
-		document.getElementById("direccion_apoderado").value = "";
-		document.getElementById("ciudad_apoderado").value = "";
-		document.getElementById("telefono_apoderado").value = "";
-		document.getElementById("correo_apoderado").value = "";
+		document.getElementById("nombre_apoderado").value = "N/A";
+		document.getElementById("vigencia_apoderado").value = "N/A";
+		document.getElementById("direccion_apoderado").value = "N/A";
+		document.getElementById("ciudad_apoderado").value = "N/A";
+		document.getElementById("telefono_apoderado").value = "N/A";
+		document.getElementById("correo_apoderado").value = "example@example.com";
 	}
 }
 
@@ -774,7 +780,6 @@ function validarAdjuntos() {
 		document.getElementById("estado_decurrente_ano").removeAttribute("required", "");
 		document.getElementById("estado_decurrente_ano").value = "";
 
-
 		document.getElementById("persona_juridica1").removeAttribute("required", "");
 		document.getElementById("persona_juridica2").removeAttribute("required", "");
 		document.getElementById("persona_juridica3").removeAttribute("required", "");
@@ -793,28 +798,12 @@ function validarAdjuntos() {
 		document.getElementById("teleforig_postulante").removeAttribute("required", "");
 		document.getElementById("extorig_postulante").removeAttribute("required", "");
 
-		document.getElementById("direcPrinOrig_postulante").value = "";
+		document.getElementById("direcPrinOrig_postulante").value ="";
 		document.getElementById("direcNumOrig_postulante").value = "";
 		document.getElementById("direcSecOrig_postulante").value = "";
 		document.getElementById("direcPisoOrig_postulante").value = "";
 		document.getElementById("teleforig_postulante").value = "";
 		document.getElementById("extorig_postulante").value = "";
-
-		document.getElementById("nombre_legal").removeAttribute("required", "");
-		document.getElementById("vigencia_legal").removeAttribute("required", "");
-		document.getElementById("pais_legal").removeAttribute("required", "");
-		document.getElementById("direccion_legal").removeAttribute("required", "");
-		document.getElementById("ciudad_legal").removeAttribute("required", "");
-		document.getElementById("telefono_legal").removeAttribute("required", "");
-		document.getElementById("correo_legal").removeAttribute("required", "");
-
-
-		document.getElementById("nombre_legal").value = "";
-		document.getElementById("vigencia_legal").value = "";
-		document.getElementById("direccion_legal").value = "";
-		document.getElementById("ciudad_legal").value = "";
-		document.getElementById("telefono_legal").value = "";
-		document.getElementById("correo_legal").value = "";
 
 
 	} else if (id == 2)	{
@@ -907,12 +896,12 @@ function validarAdjuntos() {
 		document.getElementById("teleforig_postulante").removeAttribute("required", "");
 		document.getElementById("extorig_postulante").removeAttribute("required", "");
 
-		document.getElementById("direcPrinOrig_postulante").value = "";
-		document.getElementById("direcNumOrig_postulante").value = "";
-		document.getElementById("direcSecOrig_postulante").value = "";
-		document.getElementById("direcPisoOrig_postulante").value = "";
-		document.getElementById("teleforig_postulante").value = "";
-		document.getElementById("extorig_postulante").value = "";
+		document.getElementById("direcPrinOrig_postulante").value = "N/A";
+		document.getElementById("direcNumOrig_postulante").value = "N/A";
+		document.getElementById("direcSecOrig_postulante").value = "N/A";
+		document.getElementById("direcPisoOrig_postulante").value = "N/A";
+		document.getElementById("teleforig_postulante").value = "000000";
+		document.getElementById("extorig_postulante").value = "N/A";
 
 	} else if  (id == 4) {
 
@@ -1181,18 +1170,14 @@ const vigenciaLegal = () => {
 
 
 
-
-
 //VALIDAR LA FECHA COMPLETA 
 function vigenciaApoderado() {
 	const vigencia_apoderado = document.getElementById('vigencia_apoderado').value;
 	const Factual = new Date();
-
 	//Ffutura.setMonth(Ffutura.getMonth() + 60);
 	var mesLegal = vigencia_apoderado.substring(3, 5); //El año-mes
 	var diaLegal = vigencia_apoderado.substring(0, 2); //El año-mes
 	var anoLegal = vigencia_apoderado.substring(vigencia_apoderado.lastIndexOf("/") + 1); //El día
-
 	//PARA SACAR EL MES Y AUMENTARLE 0
 	var mesActual = (Factual.getMonth() + 1).toString();
 	if (mesActual.length <= 1) {
@@ -1203,13 +1188,9 @@ function vigenciaApoderado() {
 	if (diaActual.length <= 1) {
 		diaActual = "0" + diaActual;
 	}
-
 	var anoActual = Factual.getFullYear();
 	//PARA UNIR LA FECHA COMPLETA CON LAS SEPARACIONES
 	//var FactualF = dia + "/" + mes + "/" + Factual.getFullYear();
-
-
-
 	if (anoLegal > anoActual) {
 		document.getElementById("nombre_apoderado").removeAttribute("disabled", "");
 		document.getElementById("direccion_apoderado").removeAttribute("disabled", "");
@@ -1376,8 +1357,6 @@ function mensajeError() {
 	const noDomic1Error = document.getElementById("persona_no_domic1");
 	const noDomic2Error = document.getElementById("persona_no_domic1");
 	const noDomic3Error = document.getElementById("persona_no_domic1");
-
-
 
 	if ((idTipo == 1)||(idTipo == 2)) {
 		if (natural1Error.files && natural1Error.files[0]) {
