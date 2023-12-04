@@ -151,6 +151,7 @@ include('conexion/conexion.php');
 										<!--<input type='hidden' class="form-control" required name="estado_solicitud" id="estado_solicitud" value="1" readonly />-->
 										<input type='hidden' class="form-control" required name="estado_calificacion" id="estado_calificacion" value="1" readonly />
 										<input type='hidden' class="form-control" required name="estado_productosOferta" id="estado_productosOferta" value="1" readonly />
+										<input type='hidden' class="form-control" required name="proceso_id" id="proceso_id" value="1" />
 
 										<div class="container" style="color:#060505;">
 											<div class="row">

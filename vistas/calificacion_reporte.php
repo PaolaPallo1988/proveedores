@@ -237,7 +237,8 @@ $row = mysqli_fetch_array($result);
                                                 <?php
                                                 }
                                                 ?>
-                                                <label class="formulario_label_reporte"> ESPECIFICACIÓN DEL BIEN : <label class="span"><?php echo $detalleSistemaC4IVR ?></label></label>
+                                                <label class="formulario_label_reporte"> ESPECIFICACIÓN DEL BIEN : </label>
+                                                <label class="detalle"><?php echo $detalleSistemaC4IVR ?></label>
                                             <?php
                                             } else {
                                             ?>
@@ -265,8 +266,8 @@ $row = mysqli_fetch_array($result);
                                                 <?php
                                                 }
                                                 ?>
-                                                <label class="formulario_label_reporte"> ESPECIFICACIÓN DEL BIEN : <label class="span"><?php echo $detalleAeronaveFijo ?></label></label>
-                                                <div class="detalle"> </div>
+                                                <label class="formulario_label_reporte"> ESPECIFICACIÓN DEL BIEN : </label>
+                                                <label class="detalle"><?php echo $detalleAeronaveFijo ?></label>
                                             <?php
                                             } else {
                                             ?>
@@ -294,7 +295,8 @@ $row = mysqli_fetch_array($result);
                                                 <?php
                                                 }
                                                 ?>
-                                                <label class="formulario_label_reporte"> ESPECIFICACIÓN DEL BIEN : <label class="span"><?php echo $detalleDefensaAerea ?></label></label>
+                                                <label class="formulario_label_reporte"> ESPECIFICACIÓN DEL BIEN : </label>
+                                                <label class="detalle"><?php echo $detalleDefensaAerea ?></label>
                                             <?php
                                             } else {
                                             ?>
@@ -323,7 +325,8 @@ $row = mysqli_fetch_array($result);
                                                 <?php
                                                 }
                                                 ?>
-                                                <label class="formulario_label_reporte"> ESPECIFICACIÓN DEL BIEN : <label class="span"><?php echo $detalleAeronaveRotatoria ?></label></label>
+                                                <label class="formulario_label_reporte"> ESPECIFICACIÓN DEL BIEN :</label>
+                                                <label class="detalle"><?php echo $detalleAeronaveRotatoria ?></label>
                                             <?php
                                             } else {
                                             ?>
@@ -351,7 +354,8 @@ $row = mysqli_fetch_array($result);
                                                 <?php
                                                 }
                                                 ?>
-                                                <label class="formulario_label_reporte"> ESPECIFICACIÓN DEL BIEN : <label class="span"> <?php echo $detalleArmamentoApoyo ?></label></label>
+                                                <label class="formulario_label_reporte"> ESPECIFICACIÓN DEL BIEN : </label>
+                                                <label class="detalle"> <?php echo $detalleArmamentoApoyo ?></label>
                                             <?php
                                             } else {
                                             ?>
@@ -379,7 +383,8 @@ $row = mysqli_fetch_array($result);
                                                 <?php
                                                 }
                                                 ?>
-                                                <label class="formulario_label_reporte"> ESPECIFICACIÓN DEL BIEN : <label class="span"><?php echo $detalleCombateNaval ?></label></label>
+                                                <label class="formulario_label_reporte"> ESPECIFICACIÓN DEL BIEN : </label>
+                                                <label class="detalle"><?php echo $detalleCombateNaval ?></label>
                                             <?php
                                             } else {
                                             ?>
@@ -407,7 +412,8 @@ $row = mysqli_fetch_array($result);
                                                 <?php
                                                 }
                                                 ?>
-                                                <label class="formulario_label_reporte"> ESPECIFICACIÓN DEL BIEN : <label class="span"> <?php echo $detalleBlindadosMecanizado ?></label></label>
+                                                <label class="formulario_label_reporte"> ESPECIFICACIÓN DEL BIEN :</label>
+                                                <label class="detalle"> <?php echo $detalleBlindadosMecanizado ?></label>
                                             <?php
                                             } else {
                                             ?>
@@ -435,7 +441,8 @@ $row = mysqli_fetch_array($result);
                                                 <?php
                                                 }
                                                 ?>
-                                                <label class="formulario_label_reporte"> ESPECIFICACIÓN DEL BIEN : <label class="span"><?php echo $detalleContramedidasDefensivas ?></label></label>
+                                                <label class="formulario_label_reporte"> ESPECIFICACIÓN DEL BIEN :</label>
+                                                <label class="detalle"><?php echo $detalleContramedidasDefensivas ?></label>
                                             <?php
                                             } else {
                                             ?>
@@ -463,7 +470,8 @@ $row = mysqli_fetch_array($result);
                                                 <?php
                                                 }
                                                 ?>
-                                                <label class="formulario_label_reporte"> ESPECIFICACIÓN DEL BIEN : <label class="span"><?php echo $detalleSemoviente ?></label></label>
+                                                <label class="formulario_label_reporte"> ESPECIFICACIÓN DEL BIEN :</label>
+                                                <label class="detalle"><?php echo $detalleSemoviente ?></label>
                                             <?php
                                             } else {
                                             ?>
@@ -491,7 +499,8 @@ $row = mysqli_fetch_array($result);
                                                 <?php
                                                 }
                                                 ?>
-                                                <label class="formulario_label_reporte"> ESPECIFICACIÓN DEL BIEN : <label class="span"> <?php echo $detalleArmamentoEquipo ?></label></label>
+                                                <label class="formulario_label_reporte"> ESPECIFICACIÓN DEL BIEN :</label>
+                                                <label class="detalle"> <?php echo $detalleArmamentoEquipo ?></label>
                                             <?php
                                             } else {
                                             ?>
@@ -519,7 +528,8 @@ $row = mysqli_fetch_array($result);
                                                 <?php
                                                 }
                                                 ?>
-                                                <label class="formulario_label_reporte"> ESPECIFICACIÓN DEL BIEN : <label class="span"><?php echo $detalleEquipoEspecial ?></label></label>
+                                                <label class="formulario_label_reporte"> ESPECIFICACIÓN DEL BIEN :</label>
+                                                <label class="detalle"><?php echo $detalleEquipoEspecial ?></label>
                                             <?php
                                             } else {
                                             ?>

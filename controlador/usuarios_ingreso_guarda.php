@@ -22,8 +22,8 @@ if (isset($_POST['guardausuario'])) {
     $tipo_imagen = strtolower(pathinfo($nombre_imagen, PATHINFO_EXTENSION));
     $size = $_FILES["imagen"]["size"];
     $permitidos = array(0 => 'image/jpg', 1 => 'image/jpeg', 2 => 'image/png');
-    $sqlusuario = "INSERT INTO usuario  (nombre_usuario, apellido_usuario, cedula_usuario, perfil_id, estado_id, correo_usuario, usuario_creacion_resp, password_usuario,imagen) VALUES 
-                                ('" . $nombre_usuario . "','" . $apellido_usuario . "','" . $cedula_usuario . "','" . $perfil_id . "','" . $estado_id . "','" . $correo_usuario . "','" . $usuario_creacion_resp . "','" . $hashPassword . "','" . $nombre_imagen . "')";
+    $sqlusuario = "INSERT INTO usuario  (nombre_usuario, apellido_usuario, cedula_usuario, perfil_id, estado_id, correo_usuario, usuario_creacion_resp, password_usuario,imagen, fechaActualizacion_usuario) VALUES 
+                                ('" . $nombre_usuario . "','" . $apellido_usuario . "','" . $cedula_usuario . "','" . $perfil_id . "','" . $estado_id . "','" . $correo_usuario . "','" . $usuario_creacion_resp . "','" . $hashPassword . "','" . $nombre_imagen . "','".$fecha_actualizacion."')";
 
     
 if (!empty($_FILES['imagen']['tmp_name'])) {

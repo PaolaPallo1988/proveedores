@@ -30,6 +30,7 @@ if (isset($_POST['guardapostulante'])) {
             $hashPassword = password_hash($password_postulante, PASSWORD_DEFAULT);
             $estado_calificacion = mysqli_real_escape_string($conn_registro, (strip_tags($_POST["estado_calificacion"], ENT_QUOTES)));
             $estado_productosOferta = mysqli_real_escape_string($conn_registro, (strip_tags($_POST["estado_productosOferta"], ENT_QUOTES)));
+            $proceso_id = mysqli_real_escape_string($conn_registro, (strip_tags($_POST["proceso_id"], ENT_QUOTES)));
 
 
             $usuario = $nombre_postulante;
@@ -40,11 +41,11 @@ if (isset($_POST['guardapostulante'])) {
             $permitidos = array(0 => 'image/jpg', 1 => 'image/jpeg', 2 => 'image/png');
             $imagen = null;
 
-            $sqlpostulanteImagen = "INSERT INTO usuario  (nombre_usuario, cedula_usuario, perfil_id, estado_id, correo_usuario, password_usuario,imagen,estado_calificacion, estado_productosOferta,fechaActualizacion_usuario) VALUES 
-            ('" . $nombre_postulante . "','" . $ruc_postulante . "','" . $perfil_id . "','" . $estado_id . "','" . $correo_postulante . "','" . $hashPassword . "','" . $nombre_imagen . "','" . $estado_calificacion . "','" . $estado_productosOferta . "','".$fecha_actualizacion."')";
+            $sqlpostulanteImagen = "INSERT INTO usuario  (nombre_usuario, cedula_usuario, perfil_id, estado_id,proceso_id, correo_usuario, password_usuario,imagen,estado_calificacion, estado_productosOferta,fechaActualizacion_usuario) VALUES 
+            ('" . $nombre_postulante . "','" . $ruc_postulante . "','" . $perfil_id . "','" . $estado_id . "','" . $proceso_id . "','" . $correo_postulante . "','" . $hashPassword . "','" . $nombre_imagen . "','" . $estado_calificacion . "','" . $estado_productosOferta . "', NOW())";
 
-            $sqlpostulante = "INSERT INTO usuario  (nombre_usuario, cedula_usuario, perfil_id, estado_id, correo_usuario, password_usuario,estado_calificacion, estado_productosOferta,fechaActualizacion_usuario) VALUES 
-            ('" . $nombre_postulante . "','" . $ruc_postulante . "','" . $perfil_id . "','" . $estado_id . "','" . $correo_postulante . "','" . $hashPassword . "','" . $estado_calificacion . "','" . $estado_productosOferta . "', NOW())";
+            $sqlpostulante = "INSERT INTO usuario  (nombre_usuario, cedula_usuario, perfil_id, estado_id,proceso_id, correo_usuario, password_usuario,estado_calificacion, estado_productosOferta,fechaActualizacion_usuario) VALUES 
+            ('" . $nombre_postulante . "','" . $ruc_postulante . "','" . $perfil_id . "','" . $estado_id . "','" . $proceso_id . "','" . $correo_postulante . "','" . $hashPassword . "','" . $estado_calificacion . "','" . $estado_productosOferta . "', NOW())";
 
             $verficarruc = mysqli_query($conn_registro, "SELECT * FROM usuario WHERE cedula_usuario = '$ruc_postulante'");
             $verficarusuario = mysqli_query($conn_registro, "SELECT * FROM usuario WHERE nombre_usuario = '$nombre_postulante'");
@@ -180,4 +181,3 @@ if (isset($_POST['guardapostulante'])) {
 }
 // Cerramos la conexi�n
 $conn_registro->close();
-    

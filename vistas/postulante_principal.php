@@ -173,6 +173,7 @@ $nombre_usuario = $row['nombre_usuario'];
                                 <?php include("../controlador/guarda_calificacion.php"); ?>
                                 <input type='hidden' class="form-control" required name="usuario_id" id="usuario_id" value="<?php echo  $row['id_usuario']; ?>" />
                                 <input type='hidden' class="form-control" required name="estado_id" id="estado_id" value="1" readonly />
+                                <input type='hidden' class="form-control" required name="procesoId_postulante" id="procesoId_postulante" value="1" readonly />
                                 <input type='hidden' class="form-control" required name="usuario_creacion_resp" id="usuario_creacion_resp" value="<?php echo  $row['nombre_usuario'] . " " . $row['apellido_usuario']; ?>" readonly />
                                 <div class="x_panel"><br>
                                     <div class="container p-2 my-2 text-white" style="background-color:#0A307C">

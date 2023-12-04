@@ -60,78 +60,14 @@ function valideKeyEmail(evt) {
 //ESCONDER Y MOSTRAR UN FORMULARIO 
 function mostrarform(id) {
 	if (id == "1") {
-		$("#direccion_ecuador").show();
-		$("#persona_natural").show();
-		$("#grupo__estado_decurrente").show();
-		$("#grupo__estado_decurrente_ano").hide();
-		$("#representante_legal").hide();
-		$("#direccion_origen").hide();
-		$("#posee_apoderado").hide();
-		$("#titulo_apoderado").hide();
-		$("#persona_juridica_nacional_extranjera").hide();
-		$("#persona_juridica_extranjera").hide();
-		document.querySelector('#opcion_apoderadoNo').checked = true;
-
 	}
 	if (id == "2") {
-		$("#direccion_origen").show();
-		$("#direccion_ecuador").show();
-		$("#representante_legal").show();
-		$("#posee_apoderado").show();
-		$("#persona_natural").show();
-		$("#grupo__estado_decurrente_ano").show();
-		$("#grupo__estado_decurrente").hide();
-		$("#persona_juridica_nacional_extranjera").hide();
-		$("#persona_juridica_extranjera").hide();
-		$("#titulo_apoderado").hide();
-		document.querySelector('#opcion_apoderadoNo').checked = false;
-		document.querySelector('#opcion_apoderadoSi').checked = false;
-
 	}
 	if (id == "3") {
-		$("#representante_legal").show();
-		$("#direccion_ecuador").show();
-		$("#persona_juridica_nacional_extranjera").show();
-		$("#posee_apoderado").show();
-		$("#grupo__estado_decurrente").show();
-		$("#grupo__estado_decurrente_ano").hide();
-		$("#direccion_origen").hide();
-		$("#persona_juridica_extranjera").hide();
-		$("#persona_natural").hide();
-		$("#titulo_apoderado").hide();
-		document.querySelector('#opcion_apoderadoNo').checked = false;
-		document.querySelector('#opcion_apoderadoSi').checked = false;
-
 	}
 	if (id == "4") {
-		$("#direccion_ecuador").show();
-		$("#direccion_origen").show();
-		$("#representante_legal").show();
-		$("#posee_apoderado").show()
-		$("#persona_juridica_nacional_extranjera").show();
-		$("#grupo__estado_decurrente_ano").show();
-		$("#grupo__estado_decurrente").hide();
-		$("#persona_juridica_extranjera").hide();
-		$("#persona_natural").hide();
-		$("#titulo_apoderado").hide();
-		document.querySelector('#opcion_apoderadoNo').checked = false;
-		document.querySelector('#opcion_apoderadoSi').checked = false;
-
 	}
 	if (id == "5") {
-		$("#direccion_ecuador").show();
-		$("#direccion_origen").show();
-		$("#representante_legal").show();
-		$("#posee_apoderado").show();
-		$("#persona_juridica_extranjera").show();
-		$("#grupo__estado_decurrente_ano").show();
-		$("#grupo__estado_decurrente").hide();
-		$("#persona_juridica_nacional_extranjera").hide();
-		$("#persona_natural").hide();
-		$("#titulo_apoderado").hide();
-		document.querySelector('#opcion_apoderadoNo').checked = false;
-		document.querySelector('#opcion_apoderadoSi').checked = false;
-
 	}
 }
 
@@ -169,7 +105,7 @@ function postulante(id) {
 		document.getElementById("correo_apoderado").removeAttribute("required", "");
 
 		document.getElementById("nombre_apoderado").value = "N/A";
-		document.getElementById("vigencia_apoderado").value = "N/A";
+		document.getElementById("vigencia_apoderado").value = "00/00/0000";
 		document.getElementById("direccion_apoderado").value = "N/A";
 		document.getElementById("ciudad_apoderado").value = "N/A";
 		document.getElementById("telefono_apoderado").value = "N/A";
@@ -302,15 +238,6 @@ function mostrar(dato) {
 	}
 }
 
-
-
-/* VER CALENDARIO --->
-			$(function() {
-				$("#campofecha").datepicker({
-					numberOfMonths: 2,
-					showButtonPanel: true
-				});
-			});*/
 // VALIDAR SOLO NUMEROS --->
 function numeros(e) {
 	key = e.keyCode || e.which;
@@ -394,7 +321,6 @@ function valideExtension(evt) {
 }
 
 
-
 // FUNCIONES VALIDAR SLO NUMEROS, LETRAS Y EL PUNTO -->
 function valideSiglas(evt) {
 	// el código es la representación ASCII decimal de la tecla presionada.
@@ -407,7 +333,6 @@ function valideSiglas(evt) {
 		return false;
 	}
 }
-
 
 
 const formulario = document.getElementById('postulante_principal');
@@ -763,6 +688,18 @@ function validarAdjuntos() {
 
 	if (id == 1)  {
 
+		$("#direccion_ecuador").show();
+		$("#persona_natural").show();
+		$("#grupo__estado_decurrente").show();
+		$("#grupo__estado_decurrente_ano").hide();
+		$("#representante_legal").hide();
+		$("#direccion_origen").hide();
+		$("#posee_apoderado").hide();
+		$("#titulo_apoderado").hide();
+		$("#persona_juridica_nacional_extranjera").hide();
+		$("#persona_juridica_extranjera").hide();
+		document.querySelector('#opcion_apoderadoNo').checked = true;
+
 		document.getElementById("archivo").setAttribute("required", "");
 		document.getElementById("archivo1").setAttribute("required", "");
 		document.getElementById("archivo2").setAttribute("required", "");
@@ -805,8 +742,50 @@ function validarAdjuntos() {
 		document.getElementById("teleforig_postulante").value = "";
 		document.getElementById("extorig_postulante").value = "";
 
+		document.getElementById("nombre_apoderado").removeAttribute("required", "");
+		document.getElementById("vigencia_apoderado").removeAttribute("required", "");
+		document.getElementById("direccion_apoderado").removeAttribute("required", "");
+		document.getElementById("ciudad_apoderado").removeAttribute("required", "");
+		document.getElementById("telefono_apoderado").removeAttribute("required", "");
+		document.getElementById("correo_apoderado").removeAttribute("required", "");
+
+		document.getElementById("nombre_apoderado").value = "N/A";
+		document.getElementById("vigencia_apoderado").value = "00/00/0000";
+		document.getElementById("direccion_apoderado").value = "N/A";
+		document.getElementById("ciudad_apoderado").value = "N/A";
+		document.getElementById("telefono_apoderado").value = "N/A";
+		document.getElementById("correo_apoderado").value = "example@example.com";
+
+		document.getElementById("nombre_legal").removeAttribute("required", "");
+		document.getElementById("vigencia_legal").removeAttribute("required", "");
+		document.getElementById("direccion_legal").removeAttribute("required", "");
+		document.getElementById("ciudad_legal").removeAttribute("required", "");
+		document.getElementById("telefono_legal").removeAttribute("required", "");
+		document.getElementById("correo_legal").removeAttribute("required", "");
+
+		document.getElementById("nombre_legal").value = "N/A";
+		document.getElementById("vigencia_legal").value = "00/00/0000";
+		document.getElementById("direccion_legal").value = "N/A";
+		document.getElementById("ciudad_legal").value = "N/A";
+		document.getElementById("telefono_legal").value = "99999999999";
+		document.getElementById("correo_legal").value  = "example@example.com";
+
 
 	} else if (id == 2)	{
+
+
+		$("#direccion_origen").show();
+		$("#direccion_ecuador").show();
+		$("#representante_legal").show();
+		$("#posee_apoderado").show();
+		$("#persona_natural").show();
+		$("#grupo__estado_decurrente_ano").show();
+		$("#grupo__estado_decurrente").hide();
+		$("#persona_juridica_nacional_extranjera").hide();
+		$("#persona_juridica_extranjera").hide();
+		$("#titulo_apoderado").hide();
+		document.querySelector('#opcion_apoderadoNo').checked = false;
+		document.querySelector('#opcion_apoderadoSi').checked = false;
 
 		document.getElementById("archivo").setAttribute("required", "");
 		document.getElementById("archivo1").setAttribute("required", "");
@@ -852,6 +831,19 @@ function validarAdjuntos() {
 		document.getElementById("persona_no_domic3").removeAttribute("required", "");
 
 	} else if (id == 3)  {
+
+		$("#representante_legal").show();
+		$("#direccion_ecuador").show();
+		$("#persona_juridica_nacional_extranjera").show();
+		$("#posee_apoderado").show();
+		$("#grupo__estado_decurrente").show();
+		$("#grupo__estado_decurrente_ano").hide();
+		$("#direccion_origen").hide();
+		$("#persona_juridica_extranjera").hide();
+		$("#persona_natural").hide();
+		$("#titulo_apoderado").hide();
+		document.querySelector('#opcion_apoderadoNo').checked = false;
+		document.querySelector('#opcion_apoderadoSi').checked = false;
 
 		document.getElementById("archivo").setAttribute("required", "");
 		document.getElementById("archivo1").setAttribute("required", "");
@@ -905,6 +897,19 @@ function validarAdjuntos() {
 
 	} else if  (id == 4) {
 
+		$("#direccion_ecuador").show();
+		$("#direccion_origen").show();
+		$("#representante_legal").show();
+		$("#posee_apoderado").show()
+		$("#persona_juridica_nacional_extranjera").show();
+		$("#grupo__estado_decurrente_ano").show();
+		$("#grupo__estado_decurrente").hide();
+		$("#persona_juridica_extranjera").hide();
+		$("#persona_natural").hide();
+		$("#titulo_apoderado").hide();
+		document.querySelector('#opcion_apoderadoNo').checked = false;
+		document.querySelector('#opcion_apoderadoSi').checked = false;
+
 		document.getElementById("archivo").setAttribute("required", "");
 		document.getElementById("archivo1").setAttribute("required", "");
 		document.getElementById("archivo2").setAttribute("required", "");
@@ -952,6 +957,19 @@ function validarAdjuntos() {
 
 
 	if (id == 5) {
+
+		$("#direccion_ecuador").show();
+		$("#direccion_origen").show();
+		$("#representante_legal").show();
+		$("#posee_apoderado").show();
+		$("#persona_juridica_extranjera").show();
+		$("#grupo__estado_decurrente_ano").show();
+		$("#grupo__estado_decurrente").hide();
+		$("#persona_juridica_nacional_extranjera").hide();
+		$("#persona_natural").hide();
+		$("#titulo_apoderado").hide();
+		document.querySelector('#opcion_apoderadoNo').checked = false;
+		document.querySelector('#opcion_apoderadoSi').checked = false;
 
 		document.getElementById("archivo").setAttribute("required", "");
 		document.getElementById("archivo1").setAttribute("required", "");

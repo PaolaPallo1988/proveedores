@@ -309,7 +309,7 @@ ob_start();
                                                 <?php
                                                 }
                                                 ?>
-                                                <div class="formulario_label_reporte"> ESPECIFICACIÓN DEL BIEN : <span> <?php echo $detalleSistemaC4IVR ?> </span> </div>
+                                                <div class="formulario_label_reporte" > ESPECIFICACIÓN DEL BIEN : <span> <?php echo $detalleSistemaC4IVR ?> </span> </div>
                                             <?php
                                             } else {
                                             ?>
@@ -338,7 +338,6 @@ ob_start();
                                                 }
                                                 ?>
                                                 <div class="formulario_label_reporte"> ESPECIFICACIÓN DEL BIEN : <span><?php echo $detalleAeronaveFijo ?></span> </div>
-                                                <div class="detalle"> </div>
                                             <?php
                                             } else {
                                             ?>

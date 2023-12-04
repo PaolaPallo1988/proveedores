@@ -208,7 +208,7 @@ $row = mysqli_fetch_array($result);
                                                 <FONT style="color:black" size=4><b>PERFIL USUARIO *</b></FONT>
                                                 <div class="form-group">
                                                     <select class="form-control" required name="perfil_id" id="perfil_id">
-                                                        <option value="">SELECCIONAR...</option>
+                                                        <option value="0">SELECCIONAR...</option>
                                                         <option value="1">ADMINISTRADOR</option>
                                                         <option value="2">SECRETARIO</option>
                                                         <option value="3">ANALISTA</option>

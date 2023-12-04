@@ -8,6 +8,7 @@ if (isset($_POST['guardacalificacion'])) {
 
     $id_razonsoc = mysqli_real_escape_string($conn_registro, (strip_tags($_POST["razonsoc_postulante"], ENT_QUOTES)));
     $usuario_id = mysqli_real_escape_string($conn_registro, (strip_tags($_POST["usuario_id"], ENT_QUOTES)));
+    $procesoId_postulante = mysqli_real_escape_string($conn_registro, (strip_tags($_POST["procesoId_postulante"], ENT_QUOTES)));
     $siglas_postulante = mysqli_real_escape_string($conn_registro, (strip_tags($_POST["siglas_postulante"], ENT_QUOTES)));
     $cedula_postulante = mysqli_real_escape_string($conn_registro, (strip_tags($row["cedula_usuario"], ENT_QUOTES)));
     $nombre_postulante = mysqli_real_escape_string($conn_registro, (strip_tags($row["nombre_usuario"], ENT_QUOTES)));
@@ -173,7 +174,7 @@ if (isset($_POST['guardacalificacion'])) {
                             }
                             $sql = $query . $queryValue;
 
-                            $sqlcalificacion = "INSERT INTO postulante  (razonsoc_id, usuario_id, cedula_postulante, siglas_postulante, actividad_postulante, distribuidor_postulante, pais_postulante, provincia_postulante, ciudad_postulante,
+                            $sqlcalificacion = "INSERT INTO postulante  (razonsoc_id, usuario_id, procesoId_postulante, cedula_postulante, siglas_postulante, actividad_postulante, distribuidor_postulante, pais_postulante, provincia_postulante, ciudad_postulante,
                                          direcPrinOrig_postulante, direcSecOrig_postulante, direcNumOrig_postulante, direcPisoOrig_postulante, teleforig_postulante,extorig_postulante,
                                          direcPrinEcu_postulante,direcSecEcu_postulante,direcNumEcu_postulante,direcPisoEcu_postulante,extecu_postulante,paginaweb_postulante,
                                         constitucion_capital,estado_decurrente,estado_balance,
@@ -189,7 +190,7 @@ if (isset($_POST['guardacalificacion'])) {
                                         ruta_natural1, tamaño_natural1, tipo_natural1,
                                         ruta_natural2, tamaño_natural2, tipo_natural2,
                                         ruta_natural3, tamaño_natural3, tipo_natural3) VALUES 
-                                        ('" . $id_razonsoc . "','" . $usuario_id . "','" . $cedula_postulante . "','" . $siglas_postulante . "','" . $actividad_postulante . "','" . $distribuidor_postulante . "','" . $pais_postulante . "','" . $provincia_postulante . "','" . $ciudad_postulante . "',
+                                        ('" . $id_razonsoc . "','" . $usuario_id . "','".$procesoId_postulante."','" . $cedula_postulante . "','" . $siglas_postulante . "','" . $actividad_postulante . "','" . $distribuidor_postulante . "','" . $pais_postulante . "','" . $provincia_postulante . "','" . $ciudad_postulante . "',
                                         ' N/A ','N/A','N/A','N/A','N/A','N/A',
                                         '" . $direcPrinEcu_postulante . "','" . $direcSecEcu_postulante . "','" . $direcNumEcu_postulante . "','" . $direcPisoEcu_postulante . "','" . $extecu_postulante . "','" . $paginaweb_postulante . "',
                                         '" . $constitucion_capital . "','" . $estado_decurrente . "','" . $estado_balance . "',
@@ -320,7 +321,7 @@ if (isset($_POST['guardacalificacion'])) {
                             }
                             $sql = $query . $queryValue;
 
-                            $sqlcalificacion = "INSERT INTO postulante  (razonsoc_id, usuario_id, cedula_postulante, siglas_postulante, actividad_postulante, distribuidor_postulante, pais_postulante, provincia_postulante, ciudad_postulante, 
+                            $sqlcalificacion = "INSERT INTO postulante  (razonsoc_id, usuario_id,procesoId_postulante, cedula_postulante, siglas_postulante, actividad_postulante, distribuidor_postulante, pais_postulante, provincia_postulante, ciudad_postulante, 
                                         direcPrinOrig_postulante, direcSecOrig_postulante, direcNumOrig_postulante, direcPisoOrig_postulante, teleforig_postulante,extorig_postulante,
                                         direcPrinEcu_postulante,direcSecEcu_postulante,direcNumEcu_postulante,direcPisoEcu_postulante,extecu_postulante,paginaweb_postulante,
                                         constitucion_capital,estado_decurrente,estado_balance,
@@ -336,7 +337,7 @@ if (isset($_POST['guardacalificacion'])) {
                                         ruta_natural1, tamaño_natural1, tipo_natural1,
                                         ruta_natural2, tamaño_natural2, tipo_natural2,
                                         ruta_natural3, tamaño_natural3, tipo_natural3) VALUES 
-                                        ('" . $id_razonsoc . "','" . $usuario_id . "','" . $cedula_postulante . "','" . $siglas_postulante . "','" . $actividad_postulante . "','" . $distribuidor_postulante . "','" . $pais_postulante . "','" . $provincia_postulante . "','" . $ciudad_postulante . "',
+                                        ('" . $id_razonsoc . "','" . $usuario_id . "','".$procesoId_postulante."','" . $cedula_postulante . "','" . $siglas_postulante . "','" . $actividad_postulante . "','" . $distribuidor_postulante . "','" . $pais_postulante . "','" . $provincia_postulante . "','" . $ciudad_postulante . "',
                                         '" . $direcPrinOrig_postulante . "','" . $direcSecOrig_postulante . "','" . $direcNumOrig_postulante . "','" . $direcPisoOrig_postulante . "','" . $teleforig_postulante . "','" . $extorig_postulante . "',
                                         '" . $direcPrinEcu_postulante . "','" . $direcSecEcu_postulante . "','" . $direcNumEcu_postulante . "','" . $direcPisoEcu_postulante . "','" . $extecu_postulante . "','" . $paginaweb_postulante . "',
                                         '" . $constitucion_capital . "','" . $estado_decurrente_ano . "','" . $estado_balance . "',
@@ -470,7 +471,7 @@ if (isset($_POST['guardacalificacion'])) {
                             }
                             $sql = $query . $queryValue;
 
-                            $sqlcalificacion = "INSERT INTO postulante (razonsoc_id, usuario_id,cedula_postulante, siglas_postulante, actividad_postulante, distribuidor_postulante, pais_postulante, provincia_postulante, ciudad_postulante, 
+                            $sqlcalificacion = "INSERT INTO postulante (razonsoc_id, usuario_id, procesoId_postulante,cedula_postulante, siglas_postulante, actividad_postulante, distribuidor_postulante, pais_postulante, provincia_postulante, ciudad_postulante, 
                                     direcPrinOrig_postulante, direcSecOrig_postulante, direcNumOrig_postulante, direcPisoOrig_postulante, teleforig_postulante,extorig_postulante,
                                     direcPrinEcu_postulante,direcSecEcu_postulante,direcNumEcu_postulante,direcPisoEcu_postulante,extecu_postulante,paginaweb_postulante,
                                     constitucion_capital,estado_decurrente, estado_balance,
@@ -489,7 +490,7 @@ if (isset($_POST['guardacalificacion'])) {
                                     ruta_juridica4, tamaño_juridica4, tipo_juridica4,
                                     ruta_juridica5, tamaño_juridica5, tipo_juridica5,
                                     ruta_juridica6, tamaño_juridica6, tipo_juridica6) VALUES 
-                                    ('" . $id_razonsoc . "','" . $usuario_id . "','" . $cedula_postulante . "','" . $siglas_postulante . "','" . $actividad_postulante . "','" . $distribuidor_postulante . "','" . $pais_postulante . "','" . $provincia_postulante . "','" . $ciudad_postulante . "',
+                                    ('" . $id_razonsoc . "','" . $usuario_id . "','".$procesoId_postulante."','" . $cedula_postulante . "','" . $siglas_postulante . "','" . $actividad_postulante . "','" . $distribuidor_postulante . "','" . $pais_postulante . "','" . $provincia_postulante . "','" . $ciudad_postulante . "',
                                     'N/A','N/A','N/A','N/A','N/A','N/A',
                                     '" . $direcPrinEcu_postulante . "','" . $direcSecEcu_postulante . "','" . $direcNumEcu_postulante . "','" . $direcPisoEcu_postulante . "','" . $extecu_postulante . "','" . $paginaweb_postulante . "',
                                     '" . $constitucion_capital . "','" . $estado_decurrente . "','" . $estado_balance . "',
@@ -636,7 +637,7 @@ if (isset($_POST['guardacalificacion'])) {
                             }
                             $sql = $query . $queryValue;
 
-                            $sqlcalificacion = "INSERT INTO postulante (razonsoc_id, usuario_id,cedula_postulante, siglas_postulante, actividad_postulante, distribuidor_postulante, pais_postulante, provincia_postulante, ciudad_postulante,
+                            $sqlcalificacion = "INSERT INTO postulante (razonsoc_id, usuario_id,procesoId_postulante, cedula_postulante, siglas_postulante, actividad_postulante, distribuidor_postulante, pais_postulante, provincia_postulante, ciudad_postulante,
                                     direcPrinOrig_postulante, direcSecOrig_postulante, direcNumOrig_postulante, direcPisoOrig_postulante, teleforig_postulante,extorig_postulante,
                                     direcPrinEcu_postulante,direcSecEcu_postulante,direcNumEcu_postulante,direcPisoEcu_postulante,extecu_postulante,paginaweb_postulante,
                                     constitucion_capital,estado_decurrente, estado_balance,
@@ -655,7 +656,7 @@ if (isset($_POST['guardacalificacion'])) {
                                     ruta_juridica4, tamaño_juridica4, tipo_juridica4,
                                     ruta_juridica5, tamaño_juridica5, tipo_juridica5,
                                     ruta_juridica6, tamaño_juridica6, tipo_juridica6) VALUES 
-                                    ('" . $id_razonsoc . "','" . $usuario_id . "','" . $cedula_postulante . "','" . $siglas_postulante . "','" . $actividad_postulante . "','" . $distribuidor_postulante . "','" . $pais_postulante . "','" . $provincia_postulante . "','" . $ciudad_postulante . "',
+                                    ('" . $id_razonsoc . "','" . $usuario_id . "','".$procesoId_postulante."','" . $cedula_postulante . "','" . $siglas_postulante . "','" . $actividad_postulante . "','" . $distribuidor_postulante . "','" . $pais_postulante . "','" . $provincia_postulante . "','" . $ciudad_postulante . "',
                                     '" . $direcPrinOrig_postulante . "','" . $direcSecOrig_postulante . "','" . $direcNumOrig_postulante . "','" . $direcPisoOrig_postulante . "','" . $teleforig_postulante . "','" . $extorig_postulante . "',
                                     '" . $direcPrinEcu_postulante . "','" . $direcSecEcu_postulante . "','" . $direcNumEcu_postulante . "','" . $direcPisoEcu_postulante . "','" . $extecu_postulante . "','" . $paginaweb_postulante . "',
                                     '" . $constitucion_capital . "','" . $estado_decurrente_ano . "','" . $estado_balance . "',
@@ -797,7 +798,7 @@ if (isset($_POST['guardacalificacion'])) {
                             }
                             $sql = $query . $queryValue;
 
-                            $sqlcalificacion = "INSERT INTO postulante  (razonsoc_id, usuario_id,cedula_postulante, siglas_postulante, actividad_postulante, distribuidor_postulante, pais_postulante, provincia_postulante, ciudad_postulante,
+                            $sqlcalificacion = "INSERT INTO postulante  (razonsoc_id, usuario_id, procesoId_postulante,cedula_postulante, siglas_postulante, actividad_postulante, distribuidor_postulante, pais_postulante, provincia_postulante, ciudad_postulante,
                                 direcPrinOrig_postulante,direcSecOrig_postulante,direcNumOrig_postulante,direcPisoOrig_postulante, teleforig_postulante,extorig_postulante,
                                 direcPrinEcu_postulante,direcSecEcu_postulante,direcNumEcu_postulante,direcPisoEcu_postulante,extecu_postulante,paginaweb_postulante,
                                 constitucion_capital,estado_decurrente,estado_balance,
@@ -813,7 +814,7 @@ if (isset($_POST['guardacalificacion'])) {
                                 ruta_domic1, tamaño_domic1, tipo_domic1,
                                 ruta_domic2, tamaño_domic2, tipo_domic2,
                                 ruta_domic3, tamaño_domic3, tipo_domic3) VALUES 
-                                ('" . $id_razonsoc . "','" . $usuario_id . "','" . $cedula_postulante . "','" . $siglas_postulante . "','" . $actividad_postulante . "','" . $distribuidor_postulante . "','" . $pais_postulante . "','" . $provincia_postulante . "','" . $ciudad_postulante . "',
+                                ('" . $id_razonsoc . "','" . $usuario_id . "','".$procesoId_postulante."','" . $cedula_postulante . "','" . $siglas_postulante . "','" . $actividad_postulante . "','" . $distribuidor_postulante . "','" . $pais_postulante . "','" . $provincia_postulante . "','" . $ciudad_postulante . "',
                                 '" . $direcPrinOrig_postulante . "','" . $direcSecOrig_postulante . "','" . $direcNumOrig_postulante . "','" . $direcPisoOrig_postulante . "','" . $teleforig_postulante . "','" . $extorig_postulante . "',
                                 '" . $direcPrinEcu_postulante . "','" . $direcSecEcu_postulante . "','" . $direcNumEcu_postulante . "','" . $direcPisoEcu_postulante . "','" . $extecu_postulante . "','" . $paginaweb_postulante . "',
                                 '" . $constitucion_capital . "','" . $estado_decurrente_ano . "','" . $estado_balance . "',
